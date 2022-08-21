@@ -1,0 +1,46 @@
+<button
+    mat-raised-button
+    color="primary"
+    class="mb-4 float-end"
+    (click)="addAccount()">
+    Add
+    <mat-icon>add</mat-icon>
+</button>
+<table class="table">
+
+    <thead>
+
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Description</th>
+            <th scope="col">Person</th>
+            <th scope="col">Bank</th>
+            <th scope="col">Coin type</th>
+            <th scope="col"></th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        <tr *ngFor="let account of accounts">
+
+            <th scope="row">{{account.id}}</th>
+            <td>{{account.description}}</td>
+            <td>{{account.person.name}} {{account.person.lastname}}</td>
+            <td>{{account.bank?.name}}</td>
+            <td>{{account.coin.name}}</td>
+            <td>
+                <button 
+                    mat-button 
+                    color="primary"
+                    (click)="updateAccount(account)">
+                    Update
+                </button>
+            </td>
+
+        </tr>
+
+    </tbody>
+
+</table>

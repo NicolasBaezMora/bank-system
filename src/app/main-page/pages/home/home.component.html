@@ -1,0 +1,63 @@
+<mat-toolbar
+    class="toolbar-container">
+
+    <button
+        mat-icon-button
+        (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span  class="ms-2" style="cursor: pointer;" (click)="goHome()">Banks System</span>
+
+  
+
+</mat-toolbar>
+
+<mat-sidenav-container
+    class="sidenav-container">
+
+    <mat-sidenav
+        #sidenav
+        mode="side"
+        opened="true"
+        class="sidenav px-2">
+
+        <mat-nav-list>
+
+            <mat-list-item
+                class="item-sidenav"
+                routerLink="accounts">
+                <mat-icon mat-list-icon>account_box</mat-icon>
+                <span>Accounts</span>
+            </mat-list-item>
+
+            <mat-list-item
+                class="item-sidenav"
+                routerLink="persons">
+                <mat-icon mat-list-icon>face</mat-icon>
+                <span>Persons</span>
+            </mat-list-item>
+
+            <mat-list-item
+                class="item-sidenav"
+                routerLink="banks">
+                <mat-icon mat-list-icon>account_balance</mat-icon>
+                <span>Banks</span>
+            </mat-list-item>
+
+            <mat-list-item
+                class="item-sidenav"
+                routerLink="coins">
+                <mat-icon mat-list-icon>attach_money</mat-icon>
+                <span>Coins</span>
+            </mat-list-item>
+
+        </mat-nav-list>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content
+        class="container-content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

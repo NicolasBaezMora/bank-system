@@ -1,0 +1,14 @@
+.mat-field {
+    width: 100%;
+}
+
+.container {
+    position: relative;
+}
+
+.container-buttons {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 10px;
+}

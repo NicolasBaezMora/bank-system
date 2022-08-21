@@ -1,0 +1,78 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-1">
+            <mat-icon>add</mat-icon>
+        </div>
+        <div class="col-11">
+            <h1 mat-dialog-title>
+                Add person
+            </h1>
+        </div>
+
+    </div>
+    <hr>
+    <div mat-dialog-content>
+
+        <div class="row">
+            <div class="col-4">
+                <h2>New person</h2>
+            </div>
+            <div class="col-8">
+                <form autocomplete="off" [formGroup]="formPerson">
+
+                    <mat-form-field class="mat-field">
+                        <mat-label>Name</mat-label>
+                        <input placeholder="Description" matInput type="text" formControlName="name">
+                    </mat-form-field>
+                    <span *ngIf="invalidForm('name')" class="form-text text-danger">
+                        The person name it's necessary
+                    </span>
+
+                    <mat-form-field class="mat-field mt-2">
+                        <mat-label>Lastname</mat-label>
+                        <input type="text" placeholder="Lastname" matInput formControlName="lastname">
+                    </mat-form-field>
+                    <span *ngIf="invalidForm('lastname')" class="form-text text-danger">
+                        The person lastname it's necessary
+                    </span>
+
+                    <mat-form-field class="mat-field">
+                        <mat-label>Email</mat-label>
+                        <input type="email" placeholder="Email" matInput formControlName="email">
+                    </mat-form-field>
+                    <span *ngIf="invalidForm('email')" class="form-text text-danger">
+                        The person email it's necessary
+                    </span>
+
+                    <mat-form-field class="mat-field">
+                        <mat-label>Phone</mat-label>
+                        <input type="number" placeholder="Phone" matInput formControlName="phone">
+                    </mat-form-field>
+                    <span *ngIf="invalidForm('phone')" class="form-text text-danger">
+                        The person phone it's necessary
+                    </span>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div mat-dialog-actions>
+
+
+        <div class="container-buttons">
+            <button mat-button (click)="closeDialog()" color="warn">
+                Cancel
+            </button>
+
+            <button mat-button (click)="submitFormPersonAdd()">
+                Add
+            </button>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,33 @@
+<button mat-raised-button color="primary" class="mb-4 float-end" (click)="addPerson()">
+    Add
+    <mat-icon>add</mat-icon>
+</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Lastname</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let person of persons">
+            <th scope="row">{{person.id}}</th>
+            <td>{{person.name}}</td>
+            <td>{{person.lastname}}</td>
+            <td>{{person.email}}</td>
+            <td>{{person.phone}}</td>
+            <td>
+                <button
+                    mat-button
+                    color="primary"
+                    (click)="updatePerson(person)">
+                    Update
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
