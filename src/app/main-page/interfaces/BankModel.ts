@@ -1,7 +1,7 @@
 import { AccountModel } from "./AccountModel";
 
 export interface BankModel {
-    id: number;
+    id?: number;
     name?: string;
     accounts?: AccountModel[];
 }

@@ -6,8 +6,7 @@
             <mat-icon>add</mat-icon>
         </div>
         <div class="col-11">
-            <h1
-                mat-dialog-title>
+            <h1 mat-dialog-title>
                 Add account
             </h1>
         </div>
@@ -21,27 +20,21 @@
                 <h2>New account</h2>
             </div>
             <div class="col-8">
-                <form
-                    autocomplete="off" 
-                    [formGroup]="formAccount">
+                <form autocomplete="off" [formGroup]="formAccount">
 
                     <mat-form-field class="mat-field">
                         <mat-label>Desription</mat-label>
                         <input placeholder="Description" matInput type="text" formControlName="description">
                     </mat-form-field>
-                    <span
-                        *ngIf="invalidForm('description')"
-                        class="form-text text-danger">
+                    <span *ngIf="invalidForm('description')" class="form-text text-danger">
                         The account description it's necessary
                     </span>
-                    
+
                     <mat-form-field class="mat-field mt-2">
                         <mat-label>Person</mat-label>
                         <mat-select formControlName="person">
                             <mat-option value="" disabled="">-- select a person --</mat-option>
-                            <mat-option
-                                *ngFor="let person of persons"
-                                [value]="person.id">
+                            <mat-option *ngFor="let person of persons" [value]="person.id">
                                 {{person.name}}
                             </mat-option>
                         </mat-select>
@@ -51,9 +44,7 @@
                         <mat-label>Bank</mat-label>
                         <mat-select formControlName="bank">
                             <mat-option value="" disabled>-- select a bank --</mat-option>
-                            <mat-option
-                                *ngFor="let bank of banks"
-                                [value]="bank.id">
+                            <mat-option *ngFor="let bank of banks" [value]="bank.id">
                                 {{bank.name}}
                             </mat-option>
                         </mat-select>
@@ -63,14 +54,12 @@
                         <mat-label>Coin</mat-label>
                         <mat-select formControlName="coin">
                             <mat-option value="" disabled>-- select a coin --</mat-option>
-                            <mat-option
-                                *ngFor="let coin of coins"
-                                [value]="coin.id">
+                            <mat-option *ngFor="let coin of coins" [value]="coin.id">
                                 {{coin.name}}
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
-                    
+
 
                 </form>
             </div>
@@ -82,16 +71,11 @@
 
 
         <div class="container-buttons">
-            <button
-                mat-button
-                (click)="closeDialog()"
-                color="warn">
+            <button mat-button (click)="closeDialog()" color="warn">
                 Cancel
             </button>
-    
-            <button
-                mat-button
-                (click)="submitFormAccountAdd()">
+
+            <button mat-button (click)="submitFormAccountAdd()">
                 Add
             </button>
 

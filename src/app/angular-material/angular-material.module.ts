@@ -14,6 +14,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
+import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
 
 @NgModule({
   exports: [
@@ -31,7 +32,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatSelectModule,
     MatSnackBarModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    MatGridListModule,
+    MdbCollapseModule
   ]
 })
 export class AngularMaterialModule { }

@@ -1,0 +1,66 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-1">
+            <mat-icon>add</mat-icon>
+        </div>
+        <div class="col-11">
+            <h1
+                mat-dialog-title>
+                Add coin
+            </h1>
+        </div>
+
+    </div>
+    <hr>
+    <div mat-dialog-content>
+
+        <div class="row">
+            <div class="col-4">
+                <h2>New coin</h2>
+            </div>
+            <div class="col-8">
+                <form
+                    autocomplete="off" 
+                    [formGroup]="formCoin">
+
+                    <mat-form-field class="mat-field">
+                        <mat-label>Name</mat-label>
+                        <input placeholder="Name" matInput type="text" formControlName="name">
+                    </mat-form-field>
+                    <span
+                        *ngIf="invalidForm('name')"
+                        class="form-text text-danger">
+                        The coin name it's necessary
+                    </span>
+                    
+                    
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div mat-dialog-actions>
+
+
+        <div class="container-buttons">
+            <button
+                mat-button
+                (click)="closeDialog()"
+                color="warn">
+                Cancel
+            </button>
+    
+            <button
+                mat-button
+                (click)="submitFormCoinAdd()">
+                Add
+            </button>
+
+        </div>
+    </div>
+
+</div>

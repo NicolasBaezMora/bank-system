@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-1">
+            <mat-icon>add</mat-icon>
+        </div>
+        <div class="col-11">
+            <h1 mat-dialog-title>
+                Add bank
+            </h1>
+        </div>
+    </div>
+    <hr>
+    <div mat-dialog-content>
+        <div class="row">
+            <div class="col-4">
+                <h2>
+                    New Bank
+                </h2>
+            </div>
+            <div class="col-8">
+                <form [formGroup]="formBank" autocomplete="off">
+
+                    <mat-form-field class="mat-field">
+                        <mat-label>Bank name</mat-label>
+                        <input matInput type="text" placeholder="Bank name" formControlName="name">
+                    </mat-form-field>
+                    <span class="text-danger form-text" *ngIf="validateField('name')">The bank name it's necessary</span>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <div class="container-buttons">
+            <button mat-button (click)="closeDialog()" color="warn">
+                Cancel
+            </button>
+            <button mat-button (click)="submitFormAddBank()">
+                Add
+            </button>
+        </div>
+    </div>
+</div>

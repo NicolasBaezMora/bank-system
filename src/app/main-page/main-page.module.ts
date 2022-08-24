@@ -16,6 +16,8 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { AddAccountComponent } from './components/add-account/add-account.component';
 import { AddPersonComponent } from './components/add-person/add-person.component';
 import { UpdatePersonComponent } from './components/update-person/update-person.component';
+import { AddCoinComponent } from './components/add-coin/add-coin.component';
+import { AddBankComponent } from './components/add-bank/add-bank.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { UpdatePersonComponent } from './components/update-person/update-person.
     AddAccountComponent,
     AddPersonComponent,
     UpdatePersonComponent,
+    AddCoinComponent,
+    AddBankComponent,
   ],
   imports: [
     CommonModule,

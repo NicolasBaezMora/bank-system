@@ -19,4 +19,8 @@ export class BankService {
     return this.http.get<BankModel[]>(`${this.baseUrl}/banks`);
   }
 
+  public addBank(bank: BankModel): Observable<BankModel> {
+    return this.http.post<BankModel>(`${this.baseUrl}/banks`, bank);
+  }
+
 }

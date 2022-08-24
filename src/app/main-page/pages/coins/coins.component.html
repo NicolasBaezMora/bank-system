@@ -1,1 +1,14 @@
-<p>coins works!</p>
+<button
+    mat-raised-button
+    color="primary"
+    class="float-end"
+    (click)="addCoin()">
+    Add
+    <mat-icon>add</mat-icon>
+</button>
+<mat-grid-list class="mt-5" cols="2" rowHeight="70px">
+    <mat-grid-tile
+        *ngFor="let coin of coins">
+        {{coin.name}}
+    </mat-grid-tile>
+</mat-grid-list>

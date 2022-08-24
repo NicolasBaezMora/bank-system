@@ -1,6 +1,6 @@
 
 export interface CoinModel {
-    id: number;
+    id?: number;
     name?: string;
 }
 

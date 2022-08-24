@@ -19,4 +19,8 @@ export class CoinService {
     return this.http.get<CoinModel[]>(`${this.baseUrl}/coins`);
   }
 
+  public addCoin(coin: CoinModel): Observable<CoinModel> {
+    return this.http.post<CoinModel>(`${this.baseUrl}/coins`, coin);
+  }
+
 }
