@@ -14,7 +14,7 @@ services:
   
   backend-banksystem:
     container_name: backend-banksystem
-    image: 'backend-banksystem'
+    image: '316275/backend-banksystem-image:1.0'
     ports:
       - "8008:8000"
     environment:
