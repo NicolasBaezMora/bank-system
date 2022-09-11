@@ -1,5 +1,29 @@
-version: '3.8'
+version: "3.2"
 services:
+  postgres-banksystem:
+    image: postgres:14.5-alpine
+    restart: always
+    ports:
+      - "5430:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=projectspringboot
+    networks:
+      - bank-system-network
+  
+  backend-banksystem:
+    container_name: backend-banksystem
+    image: 'backend-banksystem'
+    ports:
+      - "8008:8000"
+    environment:
+      - PSQL_DB_HOST=postgres-banksystem
+      - PSQL_DB_PORT=5432
+      - PSQL_DB_USERNAME=postgres
+      - PSQL_DB_PASSWORD=123456
+    networks:
+      - bank-system-network  
   nginx:
     build:
       context: ./
@@ -12,5 +36,6 @@ services:
       - ./dist:/usr/shared/nginx/html/
     networks:
       - bank-system-network
-volumes:
-  html: {}
+networks:
+  bank-system-network:
+    driver: bridge
